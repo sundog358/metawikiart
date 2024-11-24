@@ -1,0 +1,47 @@
+.containerWrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  background-image: url("/img/paper-texture.jpg"); /* Set the background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.containerWrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogContentWrapper {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve blog post titles */
+.blogPostTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3b5998;
+  margin-bottom: 1rem;
+}
+
+/* Customize blog post date */
+.blogPostDate {
+  color: #888;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* Blog content */
+.blogPostContent {
+  line-height: 1.7;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}

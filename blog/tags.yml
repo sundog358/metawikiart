@@ -1,0 +1,69 @@
+facebook:
+  label: Facebook
+  permalink: /facebook
+  description: Facebook tag description
+
+hello:
+  label: Hello
+  permalink: /hello
+  description: Hello tag description
+
+hola:
+  label: Hola
+  permalink: /hola
+  description: Hola tag description
+
+docusaurus:
+  label: Docusaurus
+  permalink: /blog/tags/docusaurus
+  description: Docusaurus - framework for documentation
+
+Linked Open Data:
+  label: Linked Open Data
+  permalink: /blog/tags/linked-open-data
+  description: Linked Open Data for semantic interoperability
+
+LD4:
+  label: LD4
+  permalink: /blog/tags/ld4
+  description: LD4 - Linked Data for Libraries
+
+Semantic Web:
+  label: Semantic Web
+  permalink: /blog/tags/semantic-web
+  description: The Semantic Web framework and standards
+
+Knowledge Graphs:
+  label: Knowledge Graphs
+  permalink: /blog/tags/knowledge-graphs
+  description: Knowledge Graphs in linked data
+
+Interactive:
+  label: Interactive
+  permalink: /blog/tags/interactive
+  description: Interactive components and features
+
+MDX:
+  label: MDX
+  permalink: /blog/tags/mdx
+  description: MDX for interactive content
+
+React:
+  label: React
+  permalink: /blog/tags/react
+  description: React components and libraries
+
+tag1:
+  label: Tag 1
+  permalink: /blog/tags/tag1
+  description: A detailed description of Tag 1
+
+tag2:
+  label: Tag 2
+  permalink: /blog/tags/tag2
+  description: A detailed description of Tag 2
+
+tag3:
+  label: Tag 3
+  permalink: /blog/tags/tag3
+  description: A detailed description of Tag 3

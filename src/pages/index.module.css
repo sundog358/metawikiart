@@ -1,0 +1,73 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #4caf50, #03a9f4);
+  color: #fff;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3D lift effect on hover */
+.heroBanner:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to a new line */
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Adds space between buttons */
+}
+
+.buttons a {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background-color: #ffeb3b;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  background-image: linear-gradient(145deg, #ffeb3b, #ffdd00);
+}
+
+/* Hover effect for buttons */
+.buttons a:hover {
+  background-color: #ffc107;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Active state (when clicked) */
+.buttons a:active {
+  background-color: #ffeb3b;
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styling for mobile */
+@media screen and (max-width: 768px) {
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    gap: 10px; /* Less space between buttons for smaller screens */
+  }
+
+  .buttons a {
+    width: 100%; /* Full-width buttons on mobile */
+    padding: 12px;
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
+  }
+}

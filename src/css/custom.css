@@ -1,0 +1,242 @@
+/* Blog post title styling */
+.blogPostTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary-darker);
+  text-align: left;
+}
+
+.blogPostDate {
+  font-size: 0.875rem;
+  color: #0f1f7c;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Blog post content */
+.blogPostContent {
+  line-height: 1.8;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: #120558;
+}
+
+/* Headings inside blog posts */
+.blogPostContent h2,
+.blogPostContent h3 {
+  color: var(--ifm-color-primary-darker);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: bold;
+}
+
+/* Paragraphs */
+.blogPostContent p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Code blocks */
+.blogPostContent pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+/* Links inside the blog */
+.blogPostContent a {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.blogPostContent a:hover {
+  color: var(--ifm-color-primary-darker);
+  text-decoration: none;
+}
+
+/* Lists (ordered and unordered) */
+.blogPostContent ul,
+.blogPostContent ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blogPostContent ul li,
+.blogPostContent ol li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blog sidebar improvements */
+.sidebar {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.sidebar h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary-dark);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: var(--ifm-color-primary);
+}
+
+.sidebar ul li a:hover {
+  color: var(--ifm-color-primary-darker);
+}
+
+/* Blog container responsiveness */
+@media screen and (max-width: 768px) {
+  .blogPostTitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .blogPostDate {
+    text-align: center;
+  }
+
+  .blogPostContent {
+    font-size: 1rem;
+  }
+
+  .sidebar {
+    display: none; /* Hide sidebar on small screens */
+  }
+}
+
+/* Custom CSS for Navbar */
+.navbar {
+  background-color: #5875e9;
+  height: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__logo {
+  max-height: 60px;
+}
+
+.navbar__title {
+  font-size: 1.8rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar__title:hover {
+  color: white;
+}
+
+.navbar__items {
+  font-size: 1.2rem;
+}
+
+.navbar__link {
+  padding: 10px 15px;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar__link:hover {
+  background-color: white;
+  color: #1155e7;
+  border-radius: 5px;
+}
+
+/* Custom CSS for Footer */
+.footer {
+  background: linear-gradient(135deg, #0d47a1, #2e7d32);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer__title {
+  color: white;
+}
+
+.footer__item a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__item a:hover {
+  color: #ffeb3b;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+}
+
+/* Main Content Background */
+.main-content {
+  background-image: url("/img/paper-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #46237e;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Adjust content container for readability */
+.content-wrapper {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure headings stand out */
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  color: #2e7d32;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraph text */
+.main-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #1f57bd;
+}
+
+/* Code block customization */
+.main-content pre {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+.main-content a {
+  color: #2979ff;
+  text-decoration: underline;
+}
+
+.main-content a:hover {
+  color: #1e88e5;
+}
