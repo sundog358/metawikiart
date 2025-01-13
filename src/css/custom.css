@@ -1,242 +1,449 @@
-/* Blog post title styling */
-.blogPostTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--ifm-color-primary-darker);
-  text-align: left;
+/* ==========================================================================
+   ROOT VARIABLES - Theme Color Definitions
+   ========================================================================== */
+:root {
+  --sky-blue-bg: #a7f0d7; /* Light neutral background for day mode */
+  --card-bg-light: #ffffff; /* White for card backgrounds */
+  --card-hover-light: #f0f4f1; /* Subtle hover effect */
+  --text-color-light: #2c3e50; /* Dark blue-gray for readable text */
+  --text-color-secondary: #546e7a; /* Softer color for secondary text */
+  --navbar-bg-light: #c2e7ff; /* Lighter sky blue for navbar in light mode */
+  --navbar-text-light: #2c3e50; /* Dark text for contrast */
+  --footer-bg-light: #1b3420; /* Dark green for footer in light mode */
+  --footer-text-light: #0e024a; /* White text for footer in light mode */
+  --footer-link-light: #13056c; /* Light green for footer links in light mode */
+  --footer-hover-light: #87d0b7; /* Slightly darker green for hover */
 }
 
-.blogPostDate {
-  font-size: 0.875rem;
-  color: #0f1f7c;
+/* ==========================================================================
+   DARK THEME OVERRIDES
+   ========================================================================== */
+[data-theme="dark"] {
+  --sky-blue-bg: #1a1a2e; /* Dark navy background */
+  --card-bg-light: #163f85; /* Slightly lighter navy for cards */
+  --card-hover-light: #2c2c54; /* Subtle dark mode hover */
+  --text-color-light: #e0e0e0; /* Light gray for better contrast */
+  --text-color-secondary: #b0bec5; /* Softer gray for secondary text */
+  --navbar-bg-light: #5e5ebe; /* Dark navbar */
+  --footer-bg-light: #b4f297; /* Very dark blue for footer in dark mode */
+  --footer-text-light: #ffffff; /* White text for footer in dark mode */
+  --footer-link-light: #87d0b7; /* Light blue-green for footer links */
+  --footer-hover-light: #a7f0d7; /* Lighter blue-green for hover */
+}
+
+/* ==========================================================================
+   GLOBAL LAYOUT STYLES
+   ========================================================================== */
+/* Main background color application */
+body {
+  background-color: var(--sky-blue-bg);
+  min-height: 100vh;
+}
+
+/* Main content wrapper */
+.main-wrapper {
+  background-color: var(--sky-blue-bg);
+  min-height: 100vh;
+}
+
+/* Container wrapper styling */
+.container {
+  background-color: var(--sky-blue-bg);
+}
+
+/* Main content area styling */
+main {
+  background-color: var(--sky-blue-bg);
+  min-height: calc(100vh - 60px);
+}
+
+/* Ensure consistent background for all pages */
+[class*="docPage"],
+[class*="blogPage"],
+.blog-list-page,
+.blog-post-page,
+.docs-wrapper,
+main[class*="docPage"],
+main[class*="blogPages"],
+.main-content {
+  background-color: var(--sky-blue-bg);
+  min-height: calc(100vh - 60px);
+}
+
+/* Ensure wrapper divs maintain background */
+.theme-doc-markdown,
+.theme-doc-toc,
+.container {
+  background-color: var(--sky-blue-bg);
+}
+
+/* ==========================================================================
+   BLOG CARD STYLING
+   ========================================================================== */
+/* Blog card container */
+.blog-list-page article {
+  background: var(--card-bg-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover animation */
+.blog-list-page article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  background: var(--card-hover-light);
+}
+
+/* Blog post title */
+.blog-list-page article header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  font-style: italic;
+  color: var(--text-color-light);
 }
 
 /* Blog post content */
-.blogPostContent {
-  line-height: 1.8;
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  color: #120558;
+.blog-list-page article .markdown {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color-light);
 }
 
-/* Headings inside blog posts */
-.blogPostContent h2,
-.blogPostContent h3 {
-  color: var(--ifm-color-primary-darker);
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-weight: bold;
+/* ==========================================================================
+   TEXT STYLING
+   ========================================================================== */
+/* Main text content */
+.blog-list-page article .markdown {
+  color: var(--text-color-light);
 }
 
-/* Paragraphs */
-.blogPostContent p {
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem;
+/* Metadata styling */
+.blog-list-page article .metadata {
+  color: var(--text-color-secondary) !important;
 }
 
-/* Code blocks */
-.blogPostContent pre {
-  background-color: #f5f5f5;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  overflow-x: auto;
+/* ==========================================================================
+   SIDEBAR STYLING
+   ========================================================================== */
+/* Sidebar container - light mode */
+.sidebar,
+.blog-list-page aside,
+.blog-list-page .sidebar {
+  background-color: #1b3420;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode sidebar */
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .blog-list-page aside,
+[data-theme="dark"] .blog-list-page .sidebar {
+  background-color: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar links */
+.blog-list-page aside a,
+.blog-list-page .sidebar a {
+  color: #e0e0e0 !important;
+  font-size: 1.1rem;
   line-height: 1.6;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
 }
 
-/* Links inside the blog */
-.blogPostContent a {
-  color: var(--ifm-color-primary);
-  text-decoration: underline;
-}
-
-.blogPostContent a:hover {
-  color: var(--ifm-color-primary-darker);
+/* Sidebar link hover */
+.blog-list-page aside a:hover,
+.blog-list-page .sidebar a:hover {
+  color: #ffffff !important;
   text-decoration: none;
+  padding-left: 0.5rem;
 }
 
-/* Lists (ordered and unordered) */
-.blogPostContent ul,
-.blogPostContent ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
+/* Metadata styling */
+.blog-list-page article .metadata {
+  font-size: 0.95rem;
+  color: var(--text-color-secondary);
+  margin: 1rem 0;
 }
 
-.blogPostContent ul li,
-.blogPostContent ol li {
-  margin-bottom: 0.5rem;
+/* ==========================================================================
+   DARK MODE SPECIFIC STYLES
+   ========================================================================== */
+/* Dark mode text colors */
+[data-theme="dark"] .blog-list-page article .markdown,
+[data-theme="dark"] .blog-list-page article header h2,
+[data-theme="dark"] .blog-list-page article .metadata,
+[data-theme="dark"] .blog-list-page article time,
+[data-theme="dark"] .blog-list-page article .datetime {
+  color: #ffffff !important; /* White text for dark mode */
 }
 
-/* Blog sidebar improvements */
-.sidebar {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 8px;
+/* Dark mode metadata and datetime specific styling */
+[data-theme="dark"] .blog-list-page article .metadata time,
+[data-theme="dark"] .blog-list-page article .datetime,
+[data-theme="dark"] .blog-list-page article .time {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ) !important; /* Slightly softer white for better readability */
 }
 
-.sidebar h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--ifm-color-primary-dark);
+/* Dark mode sidebar */
+[data-theme="dark"] .sidebar {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding-left: 0;
+/* Dark mode sidebar background */
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .blog-list-page aside,
+[data-theme="dark"] .blog-list-page .sidebar {
+  background-color: #1a1a2e; /* Darker background for dark mode */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar ul li {
-  margin-bottom: 0.75rem;
+/* Dark mode sidebar text */
+[data-theme="dark"] .blog-list-page aside a,
+[data-theme="dark"] .blog-list-page .sidebar a {
+  color: #fff9c4 !important; /* Light yellow for links */
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: var(--ifm-color-primary);
+/* Dark mode sidebar headings */
+[data-theme="dark"] .blog-list-page aside h3,
+[data-theme="dark"] .blog-list-page .sidebar h3 {
+  color: #ffffff !important; /* Pure white for headings */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar ul li a:hover {
-  color: var(--ifm-color-primary-darker);
-}
-
-/* Blog container responsiveness */
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
 @media screen and (max-width: 768px) {
+  /* Mobile-specific adjustments */
   .blogPostTitle {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  .blogPostDate {
-    text-align: center;
-  }
-
-  .blogPostContent {
-    font-size: 1rem;
-  }
-
   .sidebar {
-    display: none; /* Hide sidebar on small screens */
+    display: none; /* Hide sidebar on mobile */
   }
 }
 
-/* Custom CSS for Navbar */
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+/* Card entrance animation */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-list-page article {
+  animation: cardFadeIn 0.5s ease-out;
+}
+
+/* ==========================================================================
+   BLOG PAGE LAYOUT
+   ========================================================================== */
+/* Blog page container */
+.blog-page-container,
+.blog-list-page,
+main[class*="blogPages"] {
+  background-color: var(--sky-blue-bg);
+  min-height: 100vh;
+}
+
+/* Blog sidebar text colors */
+.blog-list-page aside,
+.blog-list-page .sidebar {
+  background-color: var(--card-bg-light);
+}
+
+/* Blog sidebar text colors - light mode */
+.blog-list-page aside a,
+.blog-list-page .sidebar a,
+.blog-list-page aside h2,
+.blog-list-page aside h3,
+.blog-list-page .sidebar h2,
+.blog-list-page .sidebar h3 {
+  color: var(--text-color-light) !important;
+}
+
+/* Blog sidebar text colors - dark mode */
+[data-theme="dark"] .blog-list-page aside a,
+[data-theme="dark"] .blog-list-page .sidebar a,
+[data-theme="dark"] .blog-list-page aside h2,
+[data-theme="dark"] .blog-list-page aside h3,
+[data-theme="dark"] .blog-list-page .sidebar h2,
+[data-theme="dark"] .blog-list-page .sidebar h3 {
+  color: #ffffff !important;
+}
+
+/* Ensure main content area has proper background */
+.blog-list-page main {
+  background-color: var(--sky-blue-bg);
+}
+
+/* ==========================================================================
+   HEADER STYLING
+   ========================================================================== */
+/* Header container */
 .navbar {
-  background-color: #5875e9;
+  padding: 1.5rem 2rem;
   height: 80px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--navbar-bg-light) !important;
+}
+
+/* Header title and logo */
+.navbar__brand {
+  height: 3rem; /* Larger brand area */
 }
 
 .navbar__logo {
-  max-height: 60px;
+  height: 2.5rem; /* Larger logo */
+  margin-right: 1rem;
 }
 
 .navbar__title {
-  font-size: 1.8rem;
-  color: white;
-  transition: color 0.3s ease;
+  font-size: 1.5rem; /* Larger title text */
+  font-weight: 600;
 }
 
-.navbar__title:hover {
-  color: white;
-}
-
+/* Navigation items */
 .navbar__items {
-  font-size: 1.2rem;
+  height: 100%;
+  align-items: center;
 }
 
 .navbar__link {
-  padding: 10px 15px;
-  color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem; /* Larger nav links */
+  padding: 1rem 1.2rem; /* More padding around links */
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.navbar__link:hover {
-  background-color: white;
-  color: #1155e7;
-  border-radius: 5px;
-}
-
-/* Custom CSS for Footer */
-.footer {
-  background: linear-gradient(135deg, #0d47a1, #2e7d32);
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.footer__title {
-  color: white;
-}
-
-.footer__item a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer__item a:hover {
-  color: #ffeb3b;
-}
-
+/* Adjust header spacing for mobile */
 @media screen and (max-width: 768px) {
-  .footer {
-    padding: 20px 0;
+  .navbar {
+    padding: 1rem;
+    height: 70px;
+  }
+
+  .navbar__brand {
+    height: 2.5rem;
+  }
+
+  .navbar__logo {
+    height: 2rem;
   }
 }
 
-/* Main Content Background */
-.main-content {
-  background-image: url("/img/paper-texture.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  color: #46237e;
-  font-size: 1.1rem;
-  line-height: 1.8;
+/* Header text color */
+.navbar__title,
+.navbar__link,
+.navbar__link--active {
+  color: var(--navbar-text-light) !important;
 }
 
-/* Adjust content container for readability */
-.content-wrapper {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+/* ==========================================================================
+   FOOTER STYLING
+   ========================================================================== */
+.footer {
+  width: 100%;
+  background-color: var(--footer-bg-light) !important;
+  padding: 4rem 2rem;
+  position: relative;
+  margin-top: 2rem;
+  color: var(--footer-text-light);
 }
 
-/* Make sure headings stand out */
-.main-content h1,
-.main-content h2,
-.main-content h3 {
-  color: #2e7d32;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+/* Footer wrapper */
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
 }
 
-/* Paragraph text */
-.main-content p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  color: #1f57bd;
+/* Footer links section */
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
 }
 
-/* Code block customization */
-.main-content pre {
-  background-color: #f7f7f7;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Footer title styling */
+.footer__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--footer-text-light) !important;
+  letter-spacing: 0.5px;
 }
 
-/* Links */
-.main-content a {
-  color: #2979ff;
-  text-decoration: underline;
+/* Footer link items */
+.footer__items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.main-content a:hover {
-  color: #1e88e5;
+.footer__item {
+  margin: 0.5rem 0;
+}
+
+/* Footer link styling */
+.footer__link-item {
+  color: var(--footer-link-light) !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  padding: 0.2rem 0;
+  display: inline-block;
+}
+
+.footer__link-item:hover {
+  color: var(--footer-hover-light) !important;
+  text-decoration: none;
+  transform: translateX(5px);
+}
+
+/* Footer copyright */
+.footer__copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--footer-link-light) !important;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer__links {
+    grid-template-columns: 1fr;
+  }
 }

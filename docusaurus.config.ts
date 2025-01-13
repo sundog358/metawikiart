@@ -89,6 +89,11 @@ const config = {
           label: "GitHub",
           position: "right",
         },
+        {
+          to: "/sitemap",
+          label: "Sitemap",
+          position: "right",
+        },
       ],
     },
     footer: {

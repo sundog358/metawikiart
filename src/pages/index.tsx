@@ -53,7 +53,7 @@ function HomepageHeader(): JSX.Element {
           <Link className="button button--secondary button--lg" to="/resources">
             Resources
           </Link>
-          <Link className="button button--secondary button--lg" to="/site-map">
+          <Link className="button button--secondary button--lg" to="/sitemap">
             Sitemap
           </Link>
         </div>
